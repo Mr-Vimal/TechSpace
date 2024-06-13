@@ -11,7 +11,7 @@ export default function UserAdd() {
     const [showAddUser, setShowAddUser] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:3002/user')
+        axios.get('https://techspace-xdcd.onrender.com/user')
             .then(response => setUsers(response.data))
             .catch(error => {
                 console.error('Error fetching users:', error);
