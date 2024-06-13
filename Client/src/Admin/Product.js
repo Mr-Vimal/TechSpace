@@ -52,14 +52,14 @@ export default function AddProduct({ setShowForm, onSubmit, editProduct }) {
 
         try {
             if (editProduct) {
-                await axios.put(`http://localhost:3002/product/update/${editProduct._id}`, formData, {
+                await axios.put(`https://techspace-xdcd.onrender.com/product/update/${editProduct._id}`, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
                 });
                 onSubmit({ ...editProduct, Img: imageUrl, ProductName, ProductBrand, ProductCategory, Price });
             } else {
-                const response = await axios.post('http://localhost:3002/product/createProduct', formData, {
+                const response = await axios.post('https://techspace-xdcd.onrender.com/product/createProduct', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

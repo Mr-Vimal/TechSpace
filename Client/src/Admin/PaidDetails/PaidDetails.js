@@ -7,7 +7,7 @@ const PaidDetails = () => {
     useEffect(() => {
         const fetchPayments = async () => {
             try {
-                const response = await axios.get('http://localhost:3002/payment/getPayment');
+                const response = await axios.get('https://techspace-xdcd.onrender.com/payment/getPayment');
                 setPayments(response.data);
             } catch (error) {
                 console.error('Error fetching payments data:', error);
@@ -21,7 +21,7 @@ const PaidDetails = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get('http://localhost:3002/payment/getPayment');
+                const response = await axios.get('https://techspace-xdcd.onrender.com/payment/getPayment');
                 setOrders(response.data);
             } catch (error) {
                 console.error('Error fetching payments data:', error);

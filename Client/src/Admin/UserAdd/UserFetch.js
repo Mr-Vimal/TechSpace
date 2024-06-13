@@ -22,7 +22,7 @@ export default function UserFetch({ onClose }) {
 
         try {
             // Make a POST request to the server to save the user data
-            const response = await axios.post('http://localhost:3002/user/create', userData);
+            const response = await axios.post('https://techspace-xdcd.onrender.com/user/create', userData);
             console.log('Response:', response.data);
             // Optionally, you can handle success response here, e.g., show a success message
             alert('User added successfully!');
