@@ -33,7 +33,7 @@ const startServer = async () => {
         app.use('/payment', PaymentRoutes)
         app.use('/order', OrderRoutes)
         // app.use('/quote', QuoteRoutes)
-        app.use('/mail',MailRoutes)
+        app.use('/mail', MailRoutes)
     }
     catch (error) {
         console.log(error)
@@ -41,6 +41,6 @@ const startServer = async () => {
 }
 startServer();
 
-app.get('/', (req, res) => {
+app.get('/jathu', (req, res) => {
     res.send("GET Request Called")
 })
