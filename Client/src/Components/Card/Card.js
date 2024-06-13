@@ -17,7 +17,7 @@ export default function ProductPage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:3002/product/getProduct');
+                const response = await axios.get('https://techspace-xdcd.onrender.com/product/getProduct');
                 setProducts(response.data);
                 setFilteredProducts(response.data);
             } catch (error) {

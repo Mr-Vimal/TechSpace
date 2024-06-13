@@ -61,7 +61,7 @@ export default function SignUp() {
 
         try {
             // Send signup request to the server
-            const response = await axios.post('http://localhost:3002/user/create', userData);
+            const response = await axios.post('https://techspace-xdcd.onrender.com/user/create', userData);
             console.log('Response:', response.data);
             alert('Signup successful. Please login to continue.');
             navigate('/login'); // Redirect to the login page after successful signup
