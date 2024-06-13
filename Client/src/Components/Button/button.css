@@ -1,0 +1,15 @@
+button {
+    padding: 0.75rem 3rem;
+    max-width: fit-content;
+    margin: auto;
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 250px;
+  }

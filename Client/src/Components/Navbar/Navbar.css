@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+
+* {
+    text-decoration: none;
+}
+
+.navbar {
+    background: #121214;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    /* border:1px solid #15e4fd; */
+    /* clip-path: polygon(0 0, 100% 0, 100% 53%, 80% 53%, 78% 63%, 48% 63%, 45% 54%, 0 55%); */
+}
+
+/* .navbar::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px); 
+    height: calc(100% + 10px); 
+    background-color: transparent;
+    border: 5px solid blue; 
+    clip-path: polygon(0 0, 100% 0, 100% 20%, 74% 20%, 72% 33%, 30% 33%, 26% 21%, 0 20%);
+    z-index: -1; 
+} */
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logoo img{
+    width: 50px;
+}
+.logoo a {
+    font-size: 35px;
+    font-weight: 600;
+    color: aliceblue;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+li a {
+    font-family: "Orbitron", sans-serif;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+.navbtn {
+    background-color: black;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+}
+
+.navbtn a {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbtn a.active {
+    color: #244cfd
+}
+
+.navbar ul li a:hover:not(.active) {
+    color: #244cfd;
+}
+
+.navbar ul li a.active {
+    color: #244cfd;
+    transition: 0.5s;
+}
+
+.navbar ul li a:hover:not(.active) {
+    color:#244cfd;
+}
+.profile-image {
+    margin-left: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+.profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 40px; /* Adjust based on your navbar height */
+  right: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.logout-home-btn{
+    padding: 10px 20px;
+    background-color: #ce2b2b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.login-home-btn{
+  clip-path: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
+  width: 90px;
+  height: 30px;
+  background-color: linear-gradient(to right, #244cfd, #15e4fd);
+    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    border: none;
+    margin-left: 40px;
+    color: white;
+}
+
+.dropdown-menu a:hover {
+  background-color: #ddd;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navdiv {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .logoo a {
+        font-size: 28px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar ul li {
+        width: 100%;
+        text-align: left;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .navbar ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .navbtn {
+        width: auto;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logoo a {
+        font-size: 24px;
+    }
+
+    li a {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+
+    .navbtn a {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+}

@@ -1,0 +1,14 @@
+// Import necessary dependencies
+import jsPDF from 'jspdf';
+
+// Function to generate PDF
+export const generatePDF = (tableData) => {
+    const doc = new jsPDF();
+
+    // Add content to the PDF document
+    doc.text('Quotation', 10, 10);
+    // Add table content, etc.
+
+    // Save the PDF
+    doc.save('quotation.pdf');
+};

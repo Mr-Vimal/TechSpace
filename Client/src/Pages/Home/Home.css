@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+
+.home {
+    background: url(./Ellipse\ 1.svg) no-repeat center center;
+    background-size: cover;
+    background-position: top center;
+    /* margin-top: 90px; */
+    padding: 60px 0;
+    height: 100vh;
+    max-height: 1000px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.landing-pagee {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 4rem;
+}
+
+.land-img {
+    margin-left: -850px;
+    margin-top: 100px;
+}
+
+.land-img img {
+    width: 800px;
+}
+
+.homebtn {
+    font-family: "Orbitron", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    /* Set the number of columns and their width */
+    grid-gap: 3rem;
+    /* Add gap between columns */
+    margin-right: 900px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+}
+
+.homeletter {
+    margin-top: 80px;
+    margin-left: 800px;
+    /* margin-bottom: 300px; */
+
+}
+
+.homeletter .sub-title {
+    /* margin-top: 200px; */
+    color: hsl(0, 0%, 100%);
+    font-family: 'Oswald', sans-serif;
+    font-size: 80px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    text-shadow: 0 7px hsla(0, 0%, 0%, 0.4);
+    /* margin-bottom: 155px; */
+    margin-left: -750px;
+    margin-top: 200px;
+}
+
+.homeletter .homelet1 {
+    /* margin-top: 200px; */
+    align-items: center;
+    font-family: "Refault", Georgia;
+    display: block;
+    /* font: 150px; */
+    /* font-size: 2em; */
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-weight: 400px;
+    font-size: 60px;
+    color: hsl(0, 0%, 100%);
+    width: 600px;
+    margin-left: -600px;
+}
+
+.homebtn .homebtn1 {
+
+    margin-top: 100px;
+    color: white;
+    background-color: linear-gradient(to right, #244cfd, #15e4fd);
+    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    border: none;
+    padding: 13px 34px;
+    letter-spacing: 1px;
+    font-size: 20px;
+    text-transform: uppercase;
+    align-items: center;
+    height: 60px;
+    width: 300px;
+    clip-path: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
+}
+
+.homebtn .homebtn1 a {
+    font-family: "Orbitron", sans-serif;
+    color: white;
+}
+
+.btn-primary:is(:hover, :focus) {
+    background: hsl(234, 14%, 14%);
+}
+
+.homebtn .homebtn2 {
+    margin-top: 100px;
+    color: white;
+    background-color: linear-gradient(to right, #244cfd, #15e4fd);
+    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    border: none;
+    padding: 13px 34px;
+    letter-spacing: 1px;
+    font-size: 20px;
+    text-transform: uppercase;
+    align-items: center;
+    height: 60px;
+    width: 300px;
+    clip-path: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
+}
+
+.homebtn .homebtn2 a {
+    font-family: "Orbitron", sans-serif;
+
+    color: white;
+}

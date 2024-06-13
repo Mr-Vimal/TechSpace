@@ -1,0 +1,96 @@
+.checkout-form {
+  width: 50%;
+  margin-left: 500px;
+  margin-top: 50px;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+}
+.checkout-right{
+    width: 100px;
+
+}
+
+.checkout-form form {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form h6 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.checkout-form .form-control {
+  margin-bottom: 15px;
+}
+
+.checkout-form .form-control label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.checkout-form .form-control input[type="text"],
+.checkout-form .form-control input[type="email"],
+.checkout-form .form-control input[type="tel"],
+.checkout-form .form-control input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+}
+
+.checkout-form .form-control input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.checkout-form .form-control-btn {
+  text-align: right;
+}
+
+.checkout-form .form-control-btn button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkout-form .form-control-btn button:hover {
+  background-color: #0056b3;
+}
+.btn-check{
+    padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.stripe-checkout-button{
+       background-color: linear-gradient(to right, #244cfd, #15e4fd);
+    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    border: none;
+    width: 100px;
+    height: 30px;
+    clip-path: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
+
+}

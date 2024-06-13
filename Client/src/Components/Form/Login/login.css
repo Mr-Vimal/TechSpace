@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  background: hsl(234, 14%, 14%);
+  margin: 50px;
+  padding: 20px;
+  margin-top: 150px;
+}
+
+.login-image img{
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.login-center{
+  margin-top: 30px;
+}
+
+.login-input{
+  width: 100%;
+  max-width: 450px;
+  background: none;
+  margin: 0 auto;
+}
+
+.login-center h1{
+  text-align: center;
+  padding: 20px 0;
+  color: white;
+}
+
+.login-center form{
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+
+form .login-txt_field{
+  background: none;
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+
+.login-txt_field input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+  color: #ffffff;
+}
+
+.login-txt_field label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-txt_field spanclass::before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #2691d9;
+  transition: .5s;
+}
+
+.login-txt_field input:focus ~ label,
+.login-txt_field input:valid ~ label{
+  top: -5px;
+  color: #2691d9;
+}
+
+.login-txt_field input:focus ~ spanclass::before,
+.login-txt_field input:valid ~ spanclass::before{
+  width: 100%;
+}
+
+.forgot{
+  margin: -5px 10px 20px 5px;
+  color: #a6a6a6;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.forgot:hover{
+  text-decoration: underline;
+}
+
+input[type="submit"]:hover{
+  border-color: #2691d9;
+  transition: .5s;
+}
+
+.signup_link{
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+}
+
+.signup_link a{
+  color: #2691d9;
+  text-decoration: none;
+}
+
+.signup_link a:hover{
+  text-decoration: underline;
+}
+
+.login-btn-no1{
+  padding: 15px 20px;
+    background-color: linear-gradient(to right, #244cfd, #15e4fd);
+    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    border: none;
+  border: none;
+  width: 100%;
+  max-width: 400px;
+  height: 50px;
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 30px auto;
+  clip-path: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
+}
+
+.login-btn-no1:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+.divider {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  margin: 2rem auto;
+}
+
+.divider::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #717775;
+  z-index: -1;
+}
+
+.divider span {
+  padding: 0 1rem;
+  color: #717775;
+  background-color: #ffffff;
+}
+
+.loginwith{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.google__login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.google__login img {
+  max-width: 25px;
+}
+
+.google__login span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #717775;
+  transition: 0.3s;
+}
+
+.google__login:hover span {
+  color:  #a4c4b5;
+}
+
+@media (min-width: 768px) {
+  .login-form {
+    flex-direction: row;
+    margin: 50px;
+    padding: 0;
+  }
+
+  .login-image img {
+    margin: 150px 100px;
+  }
+
+  .login-center {
+    margin: 30px 160px 0 0;
+  }
+
+  .login-input {
+    margin: 0;
+  }
+
+  .login-btn-no1 {
+    margin-left: 150px;
+    margin-right: 0;
+    width: 200px;
+    padding: 10px;
+  }
+
+  .loginwith {
+    margin-left: 100px;
+    text-align: left;
+  }
+}

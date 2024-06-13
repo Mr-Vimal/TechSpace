@@ -1,0 +1,75 @@
+.admin-dashboard {
+  display: grid;
+  grid-template-columns: minmax(200px, auto) 1fr; /* Left side fixed, right side takes remaining space */
+  grid-gap: 20px; /* Adjust the gap between columns */
+}
+
+
+.product-table {
+  width: 95%;
+  margin-top: 100px;
+  background-color: hsl(180, 6%, 73%);
+  color:black;
+}
+
+.product-details {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.admin-td{
+  color: black;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+.edit, .delete, .add{
+  padding: 6px 12px;
+  margin-right: 5px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.edit:hover{
+  backdrop-filter: blur(5px);
+}
+
+.delete {
+  background-color: #f44336; /* Red */
+}
+
+.add{
+  background-color: blue;
+}
+/* ProductDataShowing.css */
+.blur {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+.highlight {
+    background-color: #f0f8ff; /* Light background for the highlighted row */
+}
+
+.product-image {
+    width: 50px; /* Adjust the size as needed */
+    height: auto;
+}
+
