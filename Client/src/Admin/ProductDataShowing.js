@@ -13,7 +13,7 @@ export default function DataShowing() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://techspace-xdcd.onrender.com/product/getProduct');
+                const response = await axios.get('http://localhost:3002/product/getProduct');
                 setProducts(response.data);
             } catch (error) {
                 console.error('Error fetching products:', error);
@@ -36,7 +36,7 @@ export default function DataShowing() {
 
     const handleDeleteProduct = async (_id) => {
         try {
-            await axios.delete(`https://techspace-xdcd.onrender.com/product/delete/${_id}`);
+            await axios.delete(`http://localhost:3002/product/delete/${_id}`);
             setProducts(products.filter(product => product._id !== _id));
         } catch (error) {
             console.error('Error deleting product:', error);
