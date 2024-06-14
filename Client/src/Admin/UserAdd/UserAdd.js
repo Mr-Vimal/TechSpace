@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default function UserFetch({ onClose }) {
+export default function UserAdd({ onClose }) {
     const [FirstName, setFirstName] = useState('');
     const [LastName, setLastName] = useState('');
     const [Email, setEmail] = useState('');
