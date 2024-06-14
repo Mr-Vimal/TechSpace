@@ -11,7 +11,6 @@ import UserProfile from "../Pages/User/User";
 import AccountSetting from "../Pages/User/AccountSetting";
 import PasswordChange from "../Pages/User/Password";
 import Info from "../Pages/User/Info";
-import UserAdd from "../Admin/UserAdd/UserAdd";
 import DataShowing from "../Admin/ProductDataShowing";
 // import Cart from "../Components/AddTo Cart/Cart";
 import Details from "../Pages/Products/Details";
@@ -24,6 +23,8 @@ import Dropdown from "../Pages/Quotation/Quote";
 import CheckoutForm from "../Pages/Checkout/CheckoutForm";
 import Navbar from "../Components/Navbar/Navbar";
 import PaidDetails from "../Admin/PaidDetails/PaidDetails";
+import ImageSlider from "../Pages/Slider/ImageSlider";
+import UserFetch from "../Admin/UserAdd/UserFetch";
 
 export default function RouteTable() {
   return (
@@ -41,7 +42,7 @@ export default function RouteTable() {
         <Route path="/userprofile" element={<UserProfile />} />
         <Route path="/passwordchange" element={<PasswordChange />} />
         <Route path="/info" element={<Info />} />
-        <Route path="/useradd" element={<UserAdd />} />
+        <Route path="/useradd" element={<UserFetch />} />
         <Route path="/datashowing" element={<DataShowing />} />
         <Route path="/details" element={<Details />} />
         {/* <Route path="/cart" element={<Cart />} /> */}
@@ -51,6 +52,7 @@ export default function RouteTable() {
         <Route path="/dropdown" element={<Dropdown />} />
         <Route path="/checkout" element={<CheckoutForm />} />
         <Route path="/paiddata" element={<PaidDetails />} />
+        <Route path="/slider" element={<ImageSlider />} />
       </Routes>
     </div>
   );

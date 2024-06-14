@@ -1,11 +1,9 @@
 import React from 'react';
 import './Footer.css';
-import Navbar from '../Navbar/Navbar';
 
 export default function Footer() {
     return (
         <div>
-            <Navbar/>
             <footer>
                 <div class="footer">
                     <div class="row-icons">

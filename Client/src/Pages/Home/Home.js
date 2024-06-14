@@ -5,6 +5,7 @@ import Products from "../Products/Product";
 import Footer from "../../Components/Footer/Footer";
 import logo2 from './123.avif'
 import Navbar from "../../Components/Navbar/Navbar";
+import ImageSlider from "../Slider/ImageSlider";
 export default function Home() {
 
     return (
@@ -27,8 +28,9 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <Products />
+            {/* <Products /> */}
             <Footer />
+            <ImageSlider/>
 
         </>
     );
