@@ -18,7 +18,7 @@ const schema = new mongoose.Schema({
     ProductCategory: {
         type: String,
         required: true,
-        enum: ['Motherboard', 'Processor', 'Hard Disk', 'SSD', 'RAM', 'Mouse', 'Keyboard', 'Casing', 'Cooler', 'Graphic Card',],
+        enum: ['Motherboard', 'Processor', 'Hard Disk', 'SSD', 'RAM', 'Mouse', 'Keyboard', 'Casing', 'Cooler', 'Graphic Card','Monitor'],
         default: 'Motherboard'
     },
     ProductBrand: {
