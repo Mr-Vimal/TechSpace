@@ -18,7 +18,7 @@ const schema = new mongoose.Schema({
     ProductCategory: {
         type: String,
         required: true,
-        enum: ['Motherboard', 'Processor', 'Hard Disk', 'SSD', 'RAM', 'Mouse', 'Keyboard', 'Casing', 'Cooler', 'Graphic Card','Monitor'],
+        enum: ['Motherboard', 'Processor', 'Hard Disk', 'SSD', 'RAM', 'Mouse', 'Keyboard', 'Casing', 'Cooler', 'Graphic Card', 'mo'],
         default: 'Motherboard'
     },
     ProductBrand: {
@@ -34,7 +34,7 @@ const schema = new mongoose.Schema({
     },
     RAMGen: {
         type: String,
-        enum: ['DDR3', 'DDR4', 'DDR5',''],
+        enum: ['DDR3', 'DDR4', 'DDR5', ''],
         default: ''
     },
 
