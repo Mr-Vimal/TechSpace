@@ -2,10 +2,6 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Verdana, sans-serif;
-}
-
 .image-slider{
     margin-top:150px;
 }
