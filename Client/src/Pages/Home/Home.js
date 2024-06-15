@@ -29,8 +29,8 @@ export default function Home() {
                 </div>
             </div>
             {/* <Products /> */}
-            <Footer />
             <ImageSlider/>
+            <Footer />
 
         </>
     );

@@ -97,6 +97,7 @@ margin-right: auto;
 }
 .quote-td{
   color: #ddd;
+  width: 800px;
 }
 .quote-td:hover{
   color: black;

@@ -1,72 +1,68 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './ImageSlider.css';
+import Logo1 from './logo3.jpg';
+import Logo2 from './logo4.jpg';
+import Logo3 from './logo5.jpg';
 
-const ImageSlider = ({ images }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
+const ImageSlider = () => {
+    const [slideIndex, setSlideIndex] = useState(0);
     const slideInterval = useRef(null);
 
     useEffect(() => {
-        if (images && images.length > 0) {
-            startSlider();
-            return () => {
-                stopSlider();
-            };
-        }
-    }, [images]);
+        startSlideshow();
+        return () => clearInterval(slideInterval.current);
+    }, []);
 
-    const startSlider = () => {
-        stopSlider();
-        slideInterval.current = setInterval(() => {
-            if (!isPaused) {
-                setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-            }
-        }, 3000); // Change slide every 3 seconds
-    };
-
-    const stopSlider = () => {
-        if (slideInterval.current) {
-            clearInterval(slideInterval.current);
-        }
-    };
-
-    const handleMouseEnter = () => {
-        setIsPaused(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsPaused(false);
-    };
-
-    if (!images || images.length === 0) {
-        return <div className="slider">No images to display</div>;
-    }
-
-    return (
-        <div
-            className="slider"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
-            <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
-        </div>
-    );
-};
-
-const Imgs = () => {
-    const images = [
-        './logo3.jpg',
-        './logo4.jpg',
-        './logo5.jpg',
-        './logo6.jpg',
+    const slides = [
+        { src: Logo1, caption: 'Caption Text', productName: 'Product One' },
+        { src: Logo2, caption: 'Caption Two', productName: 'Product Two' },
+        { src: Logo3, caption: 'Caption Three', productName: 'Product Three' }
     ];
 
+    const startSlideshow = () => {
+        slideInterval.current = setInterval(() => {
+            setSlideIndex((prevIndex) => (prevIndex + 1) % slides.length);
+        }, 3000);
+    };
+
+    const pauseSlideshow = () => {
+        clearInterval(slideInterval.current);
+    };
+
     return (
-        <div className="Img">
-            <h1>Image Slider</h1>
-            <ImageSlider images={images} />
+        <div className="image-slider">
+            <div
+                className="slideshow-container"
+                onMouseEnter={pauseSlideshow}
+                onMouseLeave={startSlideshow}
+            >
+                {slides.map((slide, index) => (
+                    <div
+                        className={`mySlides fade ${index === slideIndex ? 'active' : ''}`}
+                        key={index}
+                        style={{ display: index === slideIndex ? 'flex' : 'none' }}
+                    >
+                        <div className="product-name">
+                            <h3>{slide.productName}</h3>
+                        </div>
+                        <div className="slide-content">
+                            <img src={slide.src} className="slide-image" alt={slide.caption} />
+                            <div className="text">{slide.caption}</div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <br />
+            <div style={{ textAlign: 'center' }}>
+                {slides.map((_, index) => (
+                    <span
+                        className={`dot ${index === slideIndex ? 'active' : ''}`}
+                        key={index}
+                    ></span>
+                ))}
+            </div>
         </div>
     );
 };
 
-export default Imgs;
+export default ImageSlider;
