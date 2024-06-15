@@ -14,46 +14,36 @@ body {
     flex-direction: row;
     align-items: center;
     height: 400px;
-    /* Set a fixed height for the slides */
 }
 
 img {
     vertical-align: middle;
 }
 
-/* Slideshow container */
 .slideshow-container {
     max-width: 70%;
     position: relative;
     margin: auto;
     height: 400px;
-    /* Set a fixed height for the slideshow container */
 }
 
-/* Product name */
 .product-name {
     width: 200px;
-    /* Adjust this value as needed */
     padding: 20px;
     text-align: center;
-    /* Background color for product name section */
 }
 
-/* Slide content */
 .slide-content {
     flex-grow: 1;
     height: 100%;
-    /* Ensure slide content takes full height */
 }
 
 .slide-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Ensure images cover the entire slide content */
 }
 
-/* Caption text */
 .text {
     color: #f2f2f2;
     font-size: 15px;
@@ -64,7 +54,6 @@ img {
     text-align: center;
 }
 
-/* The dots/bullets/indicators */
 .dot {
     height: 15px;
     width: 15px;
@@ -75,7 +64,6 @@ img {
 }
 
 
-/* Fading animation */
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
@@ -91,7 +79,6 @@ img {
     }
 }
 
-/* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
     .text {
         font-size: 11px
