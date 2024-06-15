@@ -45,7 +45,6 @@ export default function RouteTable() {
         <Route path="/useradd" element={<UserFetch />} />
         <Route path="/datashowing" element={<DataShowing />} />
         <Route path="/details" element={<Details />} />
-        {/* <Route path="/cart" element={<Cart />} /> */}
         <Route path="/cart" element={<Cart />} />
         <Route path="/" element={<Card />} />
         <Route path="/product/:id" element={<ProductDetails />} />
