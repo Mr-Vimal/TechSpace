@@ -21,7 +21,6 @@ import "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/react-fontawesome";
 import Dropdown from "../Pages/Quotation/Quote";
 import CheckoutForm from "../Pages/Checkout/CheckoutForm";
-import Navbar from "../Components/Navbar/Navbar";
 import PaidDetails from "../Admin/PaidDetails/PaidDetails";
 import ImageSlider from "../Pages/Slider/ImageSlider";
 import UserFetch from "../Admin/UserAdd/UserFetch";
@@ -46,8 +45,7 @@ export default function RouteTable() {
         <Route path="/datashowing" element={<DataShowing />} />
         <Route path="/details" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/" element={<Card />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/productdetails" element={<ProductDetails />} />
         <Route path="/dropdown" element={<Dropdown />} />
         <Route path="/checkout" element={<CheckoutForm />} />
         <Route path="/paiddata" element={<PaidDetails />} />

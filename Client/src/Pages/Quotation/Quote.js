@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Quote.css';
 import Navbar from '../../Components/Navbar/Navbar';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Dropdown() {
     const location = useLocation();
@@ -86,7 +88,7 @@ export default function Dropdown() {
 
     const handleAddSelection = () => {
         if (!selectedCategory || !selectedBrand || !selectedModel) {
-            alert('Please select a product.');
+            toast.error('Please select a product.');
             return;
         }
 
@@ -112,18 +114,33 @@ export default function Dropdown() {
     };
 
     const addToQuoteTable = (product) => {
-        const newSelection = {
-            category: product.ProductCategory,
-            brand: product.ProductBrand,
-            model: product.ProductName,
-            price: product.Price,
-            quantity: 1,
-            img: product.Img
-        };
-        setSelections([...selections, newSelection]);
-        setTableData([...tableData, newSelection]);
-        saveToLocalStorage('selections', [...selections, newSelection]);
-        saveToLocalStorage('tableData', [...tableData, newSelection]);
+        const existingProductIndex = tableData.findIndex(item =>
+            item.category === product.ProductCategory &&
+            item.brand === product.ProductBrand &&
+            item.model === product.ProductName
+        );
+
+        if (existingProductIndex !== -1) {
+            // Product already exists in tableData, so update quantity
+            const updatedTableData = [...tableData];
+            updatedTableData[existingProductIndex].quantity++;
+            setTableData(updatedTableData);
+            saveToLocalStorage('tableData', updatedTableData);
+        } else {
+            // Product doesn't exist in tableData, add new entry
+            const newSelection = {
+                category: product.ProductCategory,
+                brand: product.ProductBrand,
+                model: product.ProductName,
+                price: product.Price,
+                quantity: 1,
+                img: product.Img
+            };
+            setSelections([...selections, newSelection]);
+            setTableData([...tableData, newSelection]);
+            saveToLocalStorage('selections', [...selections, newSelection]);
+            saveToLocalStorage('tableData', [...tableData, newSelection]);
+        }
     };
 
     const handleIncrement = (index) => {
@@ -156,15 +173,16 @@ export default function Dropdown() {
         setTableData([]);
         localStorage.removeItem('selections');
         localStorage.removeItem('tableData');
+        toast.success('All selections cleared.');
     };
 
     const handlePrint = () => {
         if (!hasRequiredComponents()) {
-            alert('Please add all required components (Motherboard, Processor, RAM, Hard Disk, Casing, Cooler) to the quote.');
+            toast.warn('Please add all required components (Motherboard, Processor, RAM, Hard Disk, Casing, Cooler) to the quote.');
             return;
         }
         if (tableData.length === 0) {
-            alert('Nothing added in quote. Please add items to the quote.');
+            toast.error('Nothing added in quote. Please add items to the quote.');
         } else {
             window.print();
         }
@@ -178,7 +196,7 @@ export default function Dropdown() {
     const handleCheckout = () => {
         const isAuthenticated = checkUserAuthentication();
         if (!hasRequiredComponents()) {
-            alert('Please add all required components (Motherboard, Processor, RAM, Hard Disk, Casing, Cooler) to the quote.');
+            toast.error('Please add all required components (Motherboard, Processor, RAM, Hard Disk, Casing, Cooler) to the quote.');
         } else if (isAuthenticated) {
             navigate('/checkout', { state: { totalAmount: calculateTotal() } });
         } else {
@@ -207,50 +225,56 @@ export default function Dropdown() {
     const totalProductsCount = tableData.reduce((acc, curr) => acc + curr.quantity, 0);
     const totalAmount = calculateTotal();
 
-
-
-
-
     return (
         <div>
+            <Navbar />
             <div className='main'>
                 <div className='vimal-quote'>
                     <div className='vimal-quote-1'>
                         <div className="dropdown-container">
                             <div className='dropdown-box'>
-                                <label htmlFor="category" className='quote-label'>Category:</label>
-                                <select id="category" className='selectcat' value={selectedCategory} onChange={handleCategoryChange}>
-                                    <option className='opt-class' value="">Select Category</option>
-                                    {categories.map(category => (
-                                        <option key={category} value={category}>
-                                            {category}
-                                        </option>
-                                    ))}
-                                </select>
-
-                                <label htmlFor="brand" className='quote-label'>Brand:</label>
-                                <select id="brand" className='selectcat' value={selectedBrand} onChange={handleBrandChange} disabled={!selectedCategory}>
-                                    <option className='opt-class' value="">Select Brand</option>
-                                    {brands.map(brand => (
-                                        <option key={brand} value={brand}>
-                                            {brand}
-                                        </option>
-                                    ))}
-                                </select>
-
-                                <label htmlFor="model" className='quote-label'>Model:</label>
-                                <select id="model" className='selectcat' value={selectedModel} onChange={handleModelChange} disabled={!selectedBrand}>
-                                    <option className='opt-class' value="">Select Model</option>
-                                    {models.map(model => (
-                                        <option key={model} value={model}>
-                                            {model}
-                                        </option>
-                                    ))}
-                                </select>
+                                <div className='drop-box'>
+                                    <label htmlFor="category" className='quote-label'>Category:</label>
+                                    <div className='selec'>
+                                        <select id="category" className='selectcat' value={selectedCategory} onChange={handleCategoryChange}>
+                                            <option className='opt-class' value="">Select Category</option>
+                                            {categories.map(category => (
+                                                <option key={category} value={category}>
+                                                    {category}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className='drop-box'>
+                                    <label htmlFor="brand" className='quote-label'>Brand:</label>
+                                    <div className='selec'>
+                                        <select id="brand" className='selectcat' value={selectedBrand} onChange={handleBrandChange} disabled={!selectedCategory}>
+                                            <option className='opt-class' value="">Select Brand</option>
+                                            {brands.map(brand => (
+                                                <option key={brand} value={brand}>
+                                                    {brand}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className='drop-box'>
+                                    <label htmlFor="model" className='quote-label'>Model:</label>
+                                    <div className='selec'>
+                                        <select id="model" className='selectcat' value={selectedModel} onChange={handleModelChange} disabled={!selectedBrand}>
+                                            <option className='opt-class' value="">Select Model</option>
+                                            {models.map(model => (
+                                                <option key={model} value={model}>
+                                                    {model}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <button className='quote-add-btn' onClick={handleAddSelection} disabled={!selectedModel}>Add</button>
                         </div>
-
                         {selectedModelDetails && (
                             <div className='selected-model-show'>
                                 <p className='select-product'>Selected Models:</p>
@@ -258,35 +282,34 @@ export default function Dropdown() {
                                 <p>${selectedModelDetails.Price}</p>
                             </div>
                         )}
-
                         <div>
                             <table className='quote-show-table'>
                                 <thead>
-                                    <tr>
-                                        <th>Image</th>
-                                        <th>Brand</th>
-                                        <th>Model</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Total Price</th>
-                                        <th>Actions</th>
+                                    <tr className='quote-row'>
+                                        <th className='quote-thead'>Image</th>
+                                        <th className='quote-thead'>Brand</th>
+                                        <th className='quote-thead'>Model</th>
+                                        <th className='quote-thead'>Price</th>
+                                        <th className='quote-thead'>Quantity</th>
+                                        <th className='quote-thead'>Total Price</th>
+                                        <th className='quote-thead'>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {tableData.map((item, index) => (
-                                        <tr key={index}>
+                                        <tr key={index} className='quote-date'>
                                             <td className='quote-td'><img src={item.img} alt={item.model} className='image-img' /></td>
                                             <td className='quote-td'>{item.brand}</td>
                                             <td className='quote-td'>{item.model}</td>
-                                            <td className='quote-td'>${item.price}</td>
-                                            <td>
-                                                <button onClick={() => handleDecrement(index)}>-</button>
+                                            <td className='quote-td'>Rs {item.price}</td>
+                                            <td className='quote-td'>
+                                                <button className='inc-dec-btn' onClick={() => handleDecrement(index)}>-</button>
                                                 {item.quantity}
-                                                <button onClick={() => handleIncrement(index)}>+</button>
+                                                <button className='inc-dec-btn' onClick={() => handleIncrement(index)}>+</button>
                                             </td>
-                                            <td>${item.price * item.quantity}</td>
-                                            <td>
-                                                <button onClick={() => handleRemove(index)}>Remove</button>
+                                            <td className='quote-td'>Rs {item.price * item.quantity}</td>
+                                            <td className='quote-td'>
+                                                <button className='quote-remove' onClick={() => handleRemove(index)}>Remove</button>
                                             </td>
                                         </tr>
                                     ))}
@@ -295,8 +318,8 @@ export default function Dropdown() {
                             <button className='quote-clear-btn' onClick={handleClearAll} style={{ float: 'right' }}>Clear All</button>
                         </div>
                         <div className='quote-btns'>
-                            <button className='download-quotation-btn' onClick={handlePrint}>Download Quotation</button>
-                            <button className='checkout-btn' onClick={handleCheckout}>Proceed to Checkout</button>
+                            <button className='download-quotation-btn' onClick={handlePrint}>Download</button>
+                            <button className='checkout-btn' onClick={handleCheckout}>Checkout</button>
                             {/* <button className='mail-btn' onClick={handleSendEmail} >Mail</button> */}
                         </div>
                     </div>
@@ -306,6 +329,7 @@ export default function Dropdown() {
                     <p>Total Amount: ${totalAmount}</p>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 }

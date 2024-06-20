@@ -42,8 +42,8 @@ export default function Login() {
                 toast.error('Login failed. Please check your credentials.');
             }
         } catch (error) {
-            console.error('Error logging in:', error);
-            toast.error('An error occurred while logging in. Please try again later.');
+            // console.error('Error logging in:', error);
+            // toast.error('An error occurred while logging in. Please try again later.');
         }
     };
 

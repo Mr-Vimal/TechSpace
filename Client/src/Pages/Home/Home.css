@@ -18,12 +18,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 70px;
     padding-bottom: 4rem;
 }
 
 .land-img {
-    margin-left: -850px;
+    margin-left: -800px;
     margin-top: 100px;
 }
 
@@ -67,7 +67,7 @@
 .homeletter .homelet1 {
     /* margin-top: 200px; */
     align-items: center;
-    font-family: "Refault", Georgia;
+    font-family: 'Oswald', sans-serif;
     display: block;
     /* font: 150px; */
     /* font-size: 2em; */
@@ -77,7 +77,7 @@
     margin-inline-end: 0px;
     font-weight: bold;
     text-transform: uppercase;
-    font-weight: 400px;
+    font-weight: 400;
     font-size: 60px;
     color: hsl(0, 0%, 100%);
     width: 600px;
@@ -88,20 +88,12 @@
 
     margin-top: 100px;
     color: white;
-    background-color: linear-gradient(to right, #244cfd, #15e4fd);
-    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
+    background-color: #32E3D9;
     border: none;
     padding: 13px 34px;
     letter-spacing: 1px;
-    font-size: 20px;
+    font-size: 23px;
+    font-weight: 800;
     text-transform: uppercase;
     align-items: center;
     height: 60px;
@@ -121,20 +113,12 @@
 .homebtn .homebtn2 {
     margin-top: 100px;
     color: white;
-    background-color: linear-gradient(to right, #244cfd, #15e4fd);
-    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
+    background-color: #32E3D9;
     border: none;
     padding: 13px 34px;
     letter-spacing: 1px;
-    font-size: 20px;
+    font-size: 23px;
+    font-weight: 800;
     text-transform: uppercase;
     align-items: center;
     height: 60px;

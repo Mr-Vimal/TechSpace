@@ -1,0 +1,122 @@
+.admin-dashboard {
+    display: grid;
+    grid-template-columns: minmax(200px, auto) 1fr;
+    grid-gap: 20px;
+}
+
+
+.user-table {
+    width: 90%;
+    margin-top: 50px;
+    background-color: hsl(180, 18%, 59%);
+    margin-left: 130px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: black;
+}
+
+/* tr:hover {
+    background-color: #f2f2f2;
+} */
+
+.edit,
+.delete,
+.add {
+    padding: 6px 12px;
+    margin-right: 5px;
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.delete {
+    background-color: #f44336;
+    /* Red */
+}
+
+.add {
+    background-color: blue;
+}
+
+/* UserAdd.css */
+.add-user-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-user-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-buttons {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.save-button,
+.cancel-button {
+    padding: 8px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+}

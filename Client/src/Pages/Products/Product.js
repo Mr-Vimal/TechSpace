@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import './Product.css'
 import Navbar from "../../Components/Navbar/Navbar";
 // import productImg from './board.png'
@@ -8,12 +8,19 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Card from "../../Components/Card/Card";
 // import CreateProduct from "../../Admin/Product";
 // import UserAdd from "../../Admin/UserAdd/UserAdd";
+import { CartContext } from '../../Context/CartContext';
+
+
 
 export default function Products() {
+    const { addToCart, cart } = useContext(CartContext);
+
 
     return (
         <>
-        <Navbar/>
+        {/* <Navbar/> */}
+            <Navbar cartCount={cart.length} />
+
             <div className="product-div">
 
                 <div className="product-component">

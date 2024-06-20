@@ -35,22 +35,22 @@ export default function UserFetch() {
                     ) : (
                         <table>
                             <thead>
-                                <tr>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email</th>
-                                    <th>Phone Number</th>
-                                    <th>Crud</th>
+                                <tr className='user-tr'>
+                                    <th className='user-th'>First Name</th>
+                                    <th className='user-th'>Last Name</th>
+                                    <th className='user-th'>Email</th>
+                                    <th className='user-th'>Phone Number</th>
+                                    <th className='user-th'>Crud</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {users.map(user => (
                                     <tr key={user.id}>
-                                        <td>{user.FirstName}</td>
-                                        <td>{user.LastName}</td>
-                                        <td>{user.Email}</td>
-                                        <td>{user.PhoneNumber}</td>
-                                        <td>
+                                        <td className='user-td'>{user.FirstName}</td>
+                                        <td className='user-td'>{user.LastName}</td>
+                                        <td className='user-td'>{user.Email}</td>
+                                        <td className='user-td'>{user.PhoneNumber}</td>
+                                        <td className='user-td'>
                                             <button className='edit' type='button'>Edit</button>
                                             <button className='delete' type='button'>Delete</button>
                                             <button className='add' type='button' onClick={toggleAddUser}>Add</button>
@@ -62,7 +62,7 @@ export default function UserFetch() {
                     )}
                 </div>
             </div>
-            {showAddUser && <UserFetch onClose={() => setShowAddUser(false)} />} {/* Render UserFetch conditionally */}
+            {showAddUser && <UserAdd onClose={() => setShowAddUser(false)} />} {/* Render UserFetch conditionally */}
         </div>
     );
 }

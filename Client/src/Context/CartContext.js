@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
@@ -22,10 +23,12 @@ export const CartProvider = ({ children }) => {
                         ? { ...item, quantity: item.quantity + 1, totalPrice: item.totalPrice + item.Price }
                         : item
                 );
+                    
             } else {
                 updatedCart = [...prevCart, { ...product, quantity: 1, totalPrice: product.Price }];
             }
             saveCartToLocalStorage(updatedCart);
+            toast.success(`${product.ProductName} added to cart!`);
             return updatedCart;
         });
     };
@@ -44,10 +47,11 @@ export const CartProvider = ({ children }) => {
                 updatedCart = prevCart.filter(item => item._id !== productId);
             }
             saveCartToLocalStorage(updatedCart);
+             toast.warn(`${existingProduct.productName} removed from cart!`);
             return updatedCart;
         });
     };
-
+    <ToastContainer />
     const removeRow = (id) => {
         setCart(prevCart => prevCart.filter(item => item._id !== id));
     };
@@ -55,6 +59,8 @@ export const CartProvider = ({ children }) => {
     const clearCart = () => {
         setCart([]);
         localStorage.removeItem('cart');
+        toast.info(`Cart Cleared`);
+
     };
 
     return (

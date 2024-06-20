@@ -2,9 +2,8 @@ import React, { useContext } from "react";
 import { CartContext } from '../../Context/CartContext';
 import {useNavigate } from 'react-router-dom';
 
-import './Cart.css';
-import Navbar from "../Navbar/Navbar";
 
+import './Cart.css';
 export default function CartPage() {
     const navigate = useNavigate();
 
@@ -22,7 +21,6 @@ export default function CartPage() {
     };
     return (
         <>
-        <Navbar/>
         <div className='cart-page'>
             <h2>Cart</h2>
             <button onClick={clearCart}>Clear Cart</button>

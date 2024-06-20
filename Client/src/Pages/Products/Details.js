@@ -50,7 +50,7 @@ export default function Details() {
 
                     <hr />
 
-                    <p id="product_price">${product.Price}</p>
+                    <p id="product_price">Rs {product.Price}</p>
                     <div className="stockCounter d-inline">
                         <span className="btn btn-danger minus">-</span>
 
@@ -62,7 +62,7 @@ export default function Details() {
 
                     <hr />
 
-                    <p>Status: <span id="stock_status">In Stock</span></p>
+                    <p>Status: <span id="stock_statu                                    s">In Stock</span></p>
 
                     <hr />
 

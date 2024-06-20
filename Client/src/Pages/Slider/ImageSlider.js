@@ -1,64 +1,45 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ImageSlider.css';
-import Logo1 from './logo3.jpg';
-import Logo2 from './logo4.jpg';
-import Logo3 from './logo5.jpg';
 
 const ImageSlider = () => {
-    const [slideIndex, setSlideIndex] = useState(0);
-    const slideInterval = useRef(null);
+    const [products, setProducts] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        startSlideshow();
-        return () => clearInterval(slideInterval.current);
+        const fetchProducts = async () => {
+            try {
+                const response = await fetch('http://localhost:3002/product/getProduct');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setProducts(data);
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        };
+
+        fetchProducts();
     }, []);
 
-    const slides = [
-        { src: Logo1, caption: 'Caption Text', productName: 'Product One' },
-        { src: Logo2, caption: 'Caption Two', productName: 'Product Two' },
-        { src: Logo3, caption: 'Caption Three', productName: 'Product Three' }
-    ];
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
+        }, 3000); // Change slide every 3 seconds
 
-    const startSlideshow = () => {
-        slideInterval.current = setInterval(() => {
-            setSlideIndex((prevIndex) => (prevIndex + 1) % slides.length);
-        }, 3000);
-    };
-
-    const pauseSlideshow = () => {
-        clearInterval(slideInterval.current);
-    };
+        return () => clearInterval(interval); // Cleanup interval on component unmount
+    }, [products]);
 
     return (
-        <div className="image-slider">
-            <div
-                className="slideshow-container"
-                onMouseEnter={pauseSlideshow}
-                onMouseLeave={startSlideshow}
-            >
-                {slides.map((slide, index) => (
-                    <div
-                        className={`mySlides fade ${index === slideIndex ? 'active' : ''}`}
-                        key={index}
-                        style={{ display: index === slideIndex ? 'flex' : 'none' }}
-                    >
-                        <div className="product-name">
-                            <h3>{slide.productName}</h3>
-                        </div>
-                        <div className="slide-content">
-                            <img src={slide.src} className="slide-image" alt={slide.caption} />
-                            <div className="text">{slide.caption}</div>
+        <div className="slider">
+            <div className="slider-images" style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}>
+                {products.map((product, index) => (
+                    <div key={product._id} className="slide">
+                        <img src={product.Img} alt={product.ProductName} />
+                        <div className="product-info">
+                            <h2>{product.ProductName}</h2>
                         </div>
                     </div>
-                ))}
-            </div>
-            <br />
-            <div style={{ textAlign: 'center' }}>
-                {slides.map((_, index) => (
-                    <span
-                        className={`dot ${index === slideIndex ? 'active' : ''}`}
-                        key={index}
-                    ></span>
                 ))}
             </div>
         </div>
@@ -66,3 +47,4 @@ const ImageSlider = () => {
 };
 
 export default ImageSlider;
+                                                                                                                                                                                    

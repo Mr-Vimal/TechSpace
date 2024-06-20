@@ -5,6 +5,8 @@ import { CartContext } from '../../Context/CartContext';
 import './Card.css';
 import Navbar from "../Navbar/Navbar";
 
+
+
 export default function ProductPage() {
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
@@ -85,7 +87,7 @@ export default function ProductPage() {
     };
 
     const handleProductClick = (productId) => {
-        navigate(`/productdetails/${productId}`);
+        navigate(`/details/${productId}`);
     };
 
     return (
@@ -150,13 +152,14 @@ export default function ProductPage() {
                                                 <p className="product-description">{product.ProductBrand}</p>
                                             </div>
                                             <div className="product-details">
-                                                <h3 className="product-name">{product.ProductName}</h3>
+                                                <div className="product-name">{product.ProductName}</div>
+                                                <div className="product-price">Rs {product.Price}</div>
                                             </div>
-                                            <div className="product-price">Rs{product.Price}</div>
+
                                         </div>
                                         <div className="product-buttons">
                                             <button className="add-to-cart" onClick={() => addToCart(product)}>Add to Cart</button>
-                                            <button className="view-details-btn" onClick={() => handleAddToQuote(product)}>Add to Quote</button>
+                                            <button className="addtoquote-btn" onClick={() => handleAddToQuote(product)}>Add to Quote</button>
                                         </div>
                                     </div>
                                 </div>

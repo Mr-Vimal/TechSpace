@@ -139,21 +139,19 @@ li a {
 }
 .login-home-btn{
   clip-path: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
-  width: 90px;
-  height: 30px;
-  background-color: linear-gradient(to right, #244cfd, #15e4fd);
-    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
+  width: 100px;
+  height: 40px;
+    background-color: #1976D2;
     border: none;
     margin-left: 40px;
     color: white;
+    font-family: "Orbitron", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 7px;
+}
+.login-home-btn:hover{
+    cursor: pointer;
 }
 
 .dropdown-menu a:hover {

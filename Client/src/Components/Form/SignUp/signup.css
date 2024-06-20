@@ -17,7 +17,7 @@
   justify-content: space-between;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
-  background: hsl(234, 14%, 14%);
+  /* background: hsl(234, 14%, 14%); */
   margin-top: 50px;
   margin-left: 50px;
   margin-right: 50px;
@@ -80,7 +80,7 @@ form .txt_field{
   left: 5px;
   color: #adadad;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 20px;
   pointer-events: none;
   transition: .5s;
 }
@@ -131,7 +131,7 @@ input[type="submit"]:hover{
 .signup_link{
   margin: 30px 0;
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
   color: #666666;
 }
 .signup_link a{
@@ -143,29 +143,17 @@ input[type="submit"]:hover{
 }
 .signup-btn-no1{
   margin-top: 15px;
-  padding: 15px 20px;
-    background-color: linear-gradient(to right, #244cfd, #15e4fd);
-    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
-    border: none;
+  padding: 6px 20px;
+  background-color:  #15e4fd;
   border: none;
-  width: 580px;
+  width: 300px;
   height: 50px;
-  padding-bottom: 35px;
-  padding-top: 10px;
   color: white;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  font-size:20px;
+  font-size:25px;
   cursor: pointer;
-  margin-left: 65px;
+  margin-left: 370px;
   clip-path: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
 }
 .signup-btn-no1:hover {

@@ -1,7 +1,7 @@
-
 const nodemailer = require('nodemailer');
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
+const path = require('path');
 
 const sendQuoteByEmail = async (req, res) => {
     try {
@@ -13,8 +13,9 @@ const sendQuoteByEmail = async (req, res) => {
         }
 
         // Generate PDF
+        const pdfPath = path.join(__dirname, '..', '..', 'Client', 'public', 'Quotes', 'quote.pdf');
         const pdfDoc = new PDFDocument();
-        pdfDoc.pipe(fs.createWriteStream('quote.pdf'));
+        pdfDoc.pipe(fs.createWriteStream(pdfPath));
 
         // Set up PDF styles
         pdfDoc.fontSize(12);
@@ -73,7 +74,7 @@ const sendQuoteByEmail = async (req, res) => {
             attachments: [
                 {
                     filename: 'quote.pdf',
-                    path: 'quote.pdf'
+                    path: pdfPath
                 }
             ]
         };
@@ -82,7 +83,7 @@ const sendQuoteByEmail = async (req, res) => {
         await transporter.sendMail(mailOptions);
 
         // Respond with success message
-        // res.status(200).json({ message: 'Quote sent successfully' });    
+        res.status(200).json({ message: 'Quote sent successfully' });
     } catch (error) {
         console.error('Error sending quote:', error);
         res.status(500).json({ message: 'Failed to send quote' });
@@ -92,5 +93,3 @@ const sendQuoteByEmail = async (req, res) => {
 module.exports = {
     sendQuoteByEmail
 };
-
-

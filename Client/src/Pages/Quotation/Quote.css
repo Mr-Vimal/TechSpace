@@ -19,6 +19,45 @@ margin-right: auto;
   margin-top: 150px;
   color: white;
 }
+.drop-box{
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.selectcat{
+  border: none;
+  background: none;
+}
+ .selec {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   overflow: hidden;
+   box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+   padding-bottom: 1%;
+   background: transparent;
+   backdrop-filter: blur(10px);
+   height: 40px !important;
+   width: 150px;
+   clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 49%, 83% 100%, 20% 100%, 0 100%, 0 0);
+   position: relative;
+   justify-content: center;
+   background-color: #26928C;
+  color: rgb(0, 0, 0);
+ }
+
+ .selec::after {
+   content: "";
+   height: 35px;
+   width: 143px;
+   position: fixed;
+   background-color:#32E3D9;
+   z-index: -1;
+   top: 2px;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 49%, 83% 100%, 20% 100%, 0 100%, 0 0);
+ }
+
 .quote-label{
   margin-top: 7px;
   margin-left: 200px;
@@ -27,16 +66,27 @@ margin-right: auto;
 }
 
 .selectcat{
-  border: solid 1px #32E3D9;
   padding: 10px;
-  width: 150px;
+  width: 170px;
   height: 50px;
   border-radius: 10px;
-  /* background-color: hsl(234, 14%, 14%); */
-  color: white;
-  /* margin-top: 50px; */
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  font-size: 15px;
   
 }
+
+.selectcat option {
+  background-color: #32E3D9;
+  color: #000000;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.selectcat option:hover {
+  background-color: #32E3D9;
+  color: #000;
+}
+
 .selected-model-show{
   display: flex;
   color: white;
@@ -55,28 +105,31 @@ margin-right: auto;
 .quote-add-btn{
   margin-left: 50px;
   margin-top: 100px;
+  background: none;
   color: white;
-    background-color: linear-gradient(to right, #244cfd, #15e4fd);
-    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
-    border: none;
-  border: none;
-  padding: 13px 34px;
-  letter-spacing: 1px;
+  border: 2px solid #32E3D9;
+  letter-spacing: 1px;  
   font-size: 20px;
   text-transform: uppercase;
   align-items: center;
-  height: 50px;
-  width: 150px;
+  height: 35px;
+  width: 60px;
   margin-top: 150px;
-  clip-path: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
+  padding-top: -7px;
+}
+.quote-remove{
+  border:2px solid #32E3D9;
+  background: none;
+  color: white;
+  width: 70px;
+}
+.inc-dec-btn{
+    border: 2px solid #32E3D9;
+      background: none;
+      color: white;
+      width: 25px;
+      height: 25px;
+      padding: 3px;
 }
 
 .table-container {
@@ -89,28 +142,44 @@ margin-right: auto;
   border-collapse: collapse;
 }
 
-.table-container th, .table-container td {
+.table-container .quote-thead {
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #000000;
+  
+
   
 }
 .quote-td{
   color: #ddd;
+  font-size: 20px;
   width: 800px;
-}
-.quote-td:hover{
-  color: black;
-}
-
-.table-container th {
-  background-color: #f2f2f2;
-}
-
-.table-container td {
+  padding: 8px;
+  text-align: left;
   vertical-align: middle;
-  color:white;
+  border-bottom: 2px solid #32E3D9;
 }
+.quote-data:hover{
+  color: rgb(110, 9, 9);
+}
+.quote-row{
+  border:2px solid #15e4fd;
+  border-bottom: 2px solid #32E3D9;
+  width: 500px;
+}
+.quote-thead{
+  width: 500px;
+  font-size: 20px;
+  background-color: #121214;
+  color: white;
+}
+
+
+.total-details{
+  color: white;
+  margin-left: 1450px;
+}
+
 
 .table-container .actions {
   display: flex;
@@ -124,7 +193,7 @@ margin-right: auto;
   gap: 15px;
 }
 .quote-clear-btn{
-  background-color: red;
+  background-color: rgb(102, 6, 6);
   width: 100px;
   height: 30px;
   margin-top: 20px;
@@ -132,62 +201,24 @@ margin-right: auto;
   border-radius: 10px;
 }
 
-.print-btn{
-  width: 100px;
-  height: 40px;
-  font-size: 20px;
-  font-weight: 150px;
-  border: none;
-  clip-path: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
-    background-color: linear-gradient(to right, #244cfd, #15e4fd);
-    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
-    border: none;
-}
+
 .download-quotation-btn{
-  width: 150px;
-  height: 55px;
+  width: 100px;
+  height: 35px;
   margin-bottom: 10px;
   font-size: 15px;
   font-weight: 150px;
-    background-color: linear-gradient(to right, #244cfd, #15e4fd);
-    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
+  background-color: #32E3D9;
     border: none;
   clip-path: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
-  background-color: hsl(31, 100%, 51%);
 }
 .checkout-btn{
-  width: 150px;
-  height: 55px;
+  width: 100px;
+  height: 35px;
   margin-bottom: 10px;
   font-size: 15px;
   font-weight: 150px;
-      background-color: linear-gradient(to right, #244cfd, #15e4fd);
-    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
+  background-color: #32E3D9;
     border: none;
   clip-path: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
-  background-color: hsl(31, 100%, 51%);
 }

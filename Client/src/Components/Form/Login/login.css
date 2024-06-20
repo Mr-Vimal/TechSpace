@@ -9,14 +9,15 @@
 
 .login-form{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
-  background: hsl(234, 14%, 14%);
+  /* background: hsl(234, 14%, 14%); */
   margin: 50px;
   padding: 20px;
   margin-top: 150px;
+  
 }
 
 .login-image img{
@@ -25,12 +26,14 @@
   height: auto;
   margin: 0 auto;
   border-radius: 25px;
+  margin-left: 250px;
 }
 
 .login-center{
   margin-top: 30px;
+  margin-right: 250px;
 }
-
+  
 .login-input{
   width: 100%;
   max-width: 450px;
@@ -66,6 +69,7 @@ form .login-txt_field{
   background: none;
   outline: none;
   color: #ffffff;
+  font-size: 20px;
 }
 
 .login-txt_field label{
@@ -77,6 +81,7 @@ form .login-txt_field{
   font-size: 16px;
   pointer-events: none;
   transition: .5s;
+  font-size: 20px;
 }
 
 .login-txt_field spanclass::before{
@@ -106,6 +111,7 @@ form .login-txt_field{
   color: #a6a6a6;
   cursor: pointer;
   margin-top: 15px;
+  font-size: 20px;
 }
 
 .forgot:hover{
@@ -120,13 +126,15 @@ input[type="submit"]:hover{
 .signup_link{
   margin: 30px 0;
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
   color: #666666;
+  margin-bottom: 15px;
 }
 
 .signup_link a{
   color: #2691d9;
   text-decoration: none;
+  font-size: 20px;
 }
 
 .signup_link a:hover{
@@ -134,28 +142,20 @@ input[type="submit"]:hover{
 }
 
 .login-btn-no1{
-  padding: 15px 20px;
-    background-color: linear-gradient(to right, #244cfd, #15e4fd);
-    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
-    border: none;
+  padding: 6px 20px;
+  background-color: #15e4fd;
   border: none;
   width: 100%;
-  max-width: 400px;
+  max-width: 200px;
   height: 50px;
   color: white;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 700;
   cursor: pointer;
-  margin: 30px auto;
+  /* margin: 30px auto; */
+  margin-left: 200px;
   clip-path: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
 }
 
@@ -219,7 +219,7 @@ input[type="submit"]:hover{
 .google__login:hover span {
   color:  #a4c4b5;
 }
-
+/* 
 @media (min-width: 768px) {
   .login-form {
     flex-direction: row;
@@ -250,4 +250,4 @@ input[type="submit"]:hover{
     margin-left: 100px;
     text-align: left;
   }
-}
+} */

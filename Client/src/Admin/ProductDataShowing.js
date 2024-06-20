@@ -66,23 +66,23 @@ export default function DataShowing() {
                     {error ? (
                         <div>Error: {error}</div>
                     ) : (
-                        <table className="product-details">
+                        <table className="product-detail">
                             <thead>
-                                <tr>
-                                    <th>Product Image</th>
-                                    <th>Product ID</th>
-                                    <th>Product Category</th>
-                                    <th>Product Brand</th>
-                                    <th>RAM Gen</th>
-                                    <th>Processor Gen</th>
-                                    <th>Product Name</th>
-                                    <th> Price</th>
-                                    <th> <button className="add" onClick={handleAddProduct}>Add Product</button></th>
+                                <tr className="product-tr">
+                                    <th cla ssName="product-th">Product Image</th>
+                                    <th className="product-th">Product ID</th>
+                                    <th className="product-th">Product Category</th>
+                                    <th className="product-th">Product Brand</th>
+                                    <th className="product-th">RAM Gen</th>
+                                    <th className="product-th">Processor Gen</th>
+                                    <th className="product-th">Product Name</th>
+                                    <th className="product-th"> Price</th>
+                                    <th className="product-th"> <button className="add" onClick={handleAddProduct}>Add Product</button></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {products.map((product) => (
-                                    <tr key={product._id}>
+                                    <tr key={product._id} className="admin-tr2">
                                         <td className="admin-td" ><img src={product.Img} alt={product.ProductName} className="product-image" /></td>
                                         <td className="admin-td" >{product.productId}</td>
                                         <td className="admin-td" >{product.ProductCategory}</td>
@@ -92,8 +92,10 @@ export default function DataShowing() {
                                         <td className="admin-td" >{product.ProductName}</td>
                                         <td className="admin-td" >{product.Price}</td>
                                         <td className="admin-td" >
-                                            <button className="edit" onClick={() => handleEditProduct(product)}>Edit</button>
-                                            <button type="button" className="delete" onClick={() => handleDeleteProduct(product._id)}>Delete</button>
+                                            <div className="td-btn">
+                                                <button className="edit" onClick={() => handleEditProduct(product)}>Edit</button>
+                                                <button type="button" className="delete" onClick={() => handleDeleteProduct(product._id)}>Delete</button>
+                                            </div>
                                         </td>
                                     </tr>
                                 ))}
