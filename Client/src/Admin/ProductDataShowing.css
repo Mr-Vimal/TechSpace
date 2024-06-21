@@ -21,17 +21,14 @@
   /* padding: 10px; */
   text-align: center;
   border-bottom: 1px solid #ddd;
+  font-size: 18px;
 }
 
 .product-detail th {
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   font-weight: bold;
 }
 
-.product-detail tr:hover {
-  background-color: #f1f1f1;
-  color: rgb(0, 0, 0);
-}
 
 .product-image {
   width: 50px;

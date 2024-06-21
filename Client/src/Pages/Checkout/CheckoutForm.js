@@ -70,9 +70,9 @@ const CheckoutPage = () => {
 
         try {
             await axios.post('http://localhost:3002/payment/create-payment', paymentData);
-            toast.success('Payment Successful');
-            await handleSendEmail();
+            alert('Payment Successful');
             navigate('/')
+            await handleSendEmail();
         } catch (error) {
             console.error('Error processing payment:', error);
             toast.error('Payment Failed');
@@ -102,7 +102,7 @@ const CheckoutPage = () => {
 
     return (
         <>
-            <Navbar />
+            <ToastContainer />
             <div>
                 <section className="checkout-form">
                     <div className='right'>
@@ -144,12 +144,12 @@ const CheckoutPage = () => {
                                 />
                             </div>
                             <div className="form-control">
-                                <label htmlFor="country">Country</label>
+                                <label htmlFor="country">Province</label>
                                 <input
                                     type="text"
                                     name="country"
                                     id="country"
-                                    value={formData.country}
+                                    value={formData.province}
                                     onChange={handleChange}
                                     required
                                 />
@@ -180,7 +180,6 @@ const CheckoutPage = () => {
                     </StripeCheckout>
                 </section>
             </div>
-            <ToastContainer/>
         </>
     );
 };

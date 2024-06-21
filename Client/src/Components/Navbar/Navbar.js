@@ -30,7 +30,7 @@ export default function Navbar() {
   const logout = () => {
     localStorage.clear();
     setIsLoggedIn(false);
-    toast.success('You have been logged out successfully.');
+    toast.success('You have been logged out successfully.',{autoClose:1000});
     navigate('/');
   };
 
@@ -57,7 +57,6 @@ export default function Navbar() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/products">Products</Link></li>
             <li><Link to="/customBuild">Custom Build</Link></li>
-            <li><Link to="/about">About Us</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
             {/* Ensure onClick is set to toggleCartVisibility */}
             <li><a href="#" onClick={toggleCartVisibility}><FontAwesomeIcon icon={faShoppingCart} /></a></li>

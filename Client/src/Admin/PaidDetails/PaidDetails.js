@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Admin from '../Admin';
+import './PaidDetails.css'
 
 const PaidDetails = () => {
     const [payments, setPayments] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const perPage = 12; // Number of payments per page
 
     useEffect(() => {
         const fetchPayments = async () => {
             try {
-                const response = await axios.get('https://localhost:3002/payment/getPayment');
+                const response = await axios.get('http://localhost:3002/payment/getPayment');
                 setPayments(response.data);
             } catch (error) {
                 console.error('Error fetching payments data:', error);
@@ -17,14 +20,25 @@ const PaidDetails = () => {
         fetchPayments();
     }, []);
 
+    const indexOfLastPayment = currentPage * perPage;
+    const indexOfFirstPayment = indexOfLastPayment - perPage;
+    const currentPayments = payments.slice(indexOfFirstPayment, indexOfLastPayment);
 
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(payments.length / perPage); i++) {
+        pageNumbers.push(i);
+    }
 
     return (
         <div>
             <div className='admin-slide'>
                 <Admin />
             </div>
-            <table>
+            <table className="table">
                 <thead>
                     <tr>
                         <th>Full Name</th>
@@ -34,17 +48,27 @@ const PaidDetails = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {payments.map((payments, index) => (
+                    {currentPayments.map((payment, index) => (
                         <tr key={index}>
-                            <td>{payments.address}</td>
-                            <td>{payments.name}</td>
-                            <td>${payments.amount}</td>
-                            <td>{new Date(payments.date).toLocaleDateString()}</td>
+                            <td className='payment-td'>{payment.name}</td>
+                            <td className='payment-td'>{payment.address}</td>
+                            <td className='payment-td'>Rs {payment.amount}</td>
+                            <td className='payment-td'>{new Date(payment.createdAt).toLocaleDateString()}</td>
                         </tr>
                     ))}
-
                 </tbody>
             </table>
+
+            {/* Pagination */}
+            <ul className="pagination">
+                {pageNumbers.map(number => (
+                    <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
+                        <button onClick={() => handlePageChange(number)} className="page-link">
+                            {number}
+                        </button>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };

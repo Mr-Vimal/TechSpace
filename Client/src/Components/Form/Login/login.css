@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-.login-form{
+.login-form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
   /* background: hsl(234, 14%, 14%); */
   margin: 50px;
   padding: 20px;
   margin-top: 150px;
-  
+
 }
 
-.login-image img{
+.login-image img {
   width: 100%;
   max-width: 550px;
   height: auto;
@@ -29,38 +29,44 @@
   margin-left: 250px;
 }
 
-.login-center{
+.login-center {
   margin-top: 30px;
   margin-right: 250px;
 }
-  
-.login-input{
+
+.login-input {
   width: 100%;
   max-width: 450px;
   background: none;
   margin: 0 auto;
 }
 
-.login-center h1{
+.login-head{
   text-align: center;
   padding: 20px 0;
   color: white;
+  font-size: 20px;
 }
+/* .login-center .nd {
+  text-align: center;
+  padding: 20px 0;
+  color: white;
+} */
 
-.login-center form{
+.login-center form {
   padding: 0 20px;
   box-sizing: border-box;
   margin-top: 30px;
 }
 
-form .login-txt_field{
+form .login-txt_field {
   background: none;
   position: relative;
   border-bottom: 2px solid #adadad;
   margin: 30px 0;
 }
 
-.login-txt_field input{
+.login-txt_field input {
   width: 100%;
   padding: 0 5px;
   height: 40px;
@@ -72,7 +78,7 @@ form .login-txt_field{
   font-size: 20px;
 }
 
-.login-txt_field label{
+.login-txt_field label {
   position: absolute;
   top: 50%;
   left: 5px;
@@ -84,7 +90,7 @@ form .login-txt_field{
   font-size: 20px;
 }
 
-.login-txt_field spanclass::before{
+.login-txt_field spanclass::before {
   content: '';
   position: absolute;
   top: 40px;
@@ -95,18 +101,18 @@ form .login-txt_field{
   transition: .5s;
 }
 
-.login-txt_field input:focus ~ label,
-.login-txt_field input:valid ~ label{
+.login-txt_field input:focus~label,
+.login-txt_field input:valid~label {
   top: -5px;
   color: #2691d9;
 }
 
-.login-txt_field input:focus ~ spanclass::before,
-.login-txt_field input:valid ~ spanclass::before{
+.login-txt_field input:focus~spanclass::before,
+.login-txt_field input:valid~spanclass::before {
   width: 100%;
 }
 
-.forgot{
+.forgot {
   margin: -5px 10px 20px 5px;
   color: #a6a6a6;
   cursor: pointer;
@@ -114,16 +120,16 @@ form .login-txt_field{
   font-size: 20px;
 }
 
-.forgot:hover{
+.forgot:hover {
   text-decoration: underline;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
   border-color: #2691d9;
   transition: .5s;
 }
 
-.signup_link{
+.signup_link {
   margin: 30px 0;
   text-align: center;
   font-size: 20px;
@@ -131,17 +137,17 @@ input[type="submit"]:hover{
   margin-bottom: 15px;
 }
 
-.signup_link a{
+.signup_link a {
   color: #2691d9;
   text-decoration: none;
   font-size: 20px;
 }
 
-.signup_link a:hover{
+.signup_link a:hover {
   text-decoration: underline;
 }
 
-.login-btn-no1{
+.login-btn-no1 {
   padding: 6px 20px;
   background-color: #15e4fd;
   border: none;
@@ -191,7 +197,7 @@ input[type="submit"]:hover{
   background-color: #ffffff;
 }
 
-.loginwith{
+.loginwith {
   margin: 0 auto;
   text-align: center;
 }
@@ -217,8 +223,9 @@ input[type="submit"]:hover{
 }
 
 .google__login:hover span {
-  color:  #a4c4b5;
+  color: #a4c4b5;
 }
+
 /* 
 @media (min-width: 768px) {
   .login-form {

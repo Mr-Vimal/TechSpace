@@ -15,8 +15,8 @@ export default function Footer() {
 
                     <div class="row-nav">
                         <ul>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Our Services</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/contact">Contact us</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Terms & Conditions</a></li>
                             <li><a href="#">Career</a></li>

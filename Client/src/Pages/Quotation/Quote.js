@@ -266,7 +266,7 @@ export default function Dropdown() {
                                             <option className='opt-class' value="">Select Model</option>
                                             {models.map(model => (
                                                 <option key={model} value={model}>
-                                                    {model}
+                                                    { model }
                                                 </option>
                                             ))}
                                         </select>
@@ -342,3 +342,4 @@ const loadFromLocalStorage = (key) => {
     const data = localStorage.getItem(key);
     return data ? JSON.parse(data) : null;
 };
+

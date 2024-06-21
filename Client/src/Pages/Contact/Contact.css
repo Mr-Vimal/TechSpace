@@ -29,6 +29,9 @@ body{
     align-items: center;
 
 }
+#contact-selection{
+    height: 100vh;
+}
 .contact-section .contact-bg h3{
     font-size: 1.3rem;
     font-weight: 400;
@@ -77,6 +80,7 @@ body{
     text-align: center;
     padding: 2rem 0;
     color: #fff;
+    font-size: 20px;
 }
 .contact-info span{
     display: block;
@@ -127,7 +131,7 @@ body{
     font-size: 1rem;
     text-transform: uppercase;
     color: #fff;
-    background:#eaa03f;
+    background:#007bff;
     border: none;
     border-radius: 5px;
     padding: 0.7rem 1.5rem;

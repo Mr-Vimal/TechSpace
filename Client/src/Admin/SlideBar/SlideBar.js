@@ -1,7 +1,18 @@
-import React from 'react'
 import './SlideBar.css'
+import React from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import { Link, useNavigate } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
 
 function SlideBar() {
+    const navigate = useNavigate();
+    const logout = () => {
+        localStorage.clear();
+        toast.success('Admin has been logged out successfully.', {
+            autoClose: 3000, // toast will close after 3 seconds
+        });
+        navigate('/');
+    };
     return (
         <div>
             <div class="sidebar">
@@ -39,29 +50,8 @@ function SlideBar() {
                             <span class="links_name">Total order</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <span class="links_name">Team</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class='bx bx-message' ></i>
-                            <span class="links_name">Messages</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="links_name">Favrorites</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="links_name">Setting</span>
-                        </a>
-                    </li>
-                    <li class="log_out">
-                        <a href="#">
+                    <li onClick={logout}class="log_out">
+                        <a href="/">
                             <span class="links_name">Log out</span>
                         </a>
                     </li>

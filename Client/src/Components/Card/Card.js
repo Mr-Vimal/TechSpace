@@ -5,8 +5,6 @@ import { CartContext } from '../../Context/CartContext';
 import './Card.css';
 import Navbar from "../Navbar/Navbar";
 
-
-
 export default function ProductPage() {
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
@@ -15,6 +13,8 @@ export default function ProductPage() {
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
     const { addToCart } = useContext(CartContext);
+    const [currentPage, setCurrentPage] = useState(1);
+    const productsPerPage = 12;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -71,6 +71,7 @@ export default function ProductPage() {
         });
 
         setFilteredProducts(filtered);
+        setCurrentPage(1); // Reset to first page after filtering
     };
 
     const handleAddToQuote = (product) => {
@@ -84,16 +85,38 @@ export default function ProductPage() {
             const filtered = products.filter(product => product.ProductCategory.toLowerCase() === category.toLowerCase());
             setFilteredProducts(filtered);
         }
+        setCurrentPage(1); // Reset to first page after filtering
     };
 
     const handleProductClick = (productId) => {
         navigate(`/details/${productId}`);
     };
 
+    // Pagination logic
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+    const handleNextPage = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const handlePreviousPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const handlePageClick = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
     return (
         <>
             <div className='product-main'>
-
                 <div className="product-page">
                     <div className='product-left'>
                         <div className="search-container">
@@ -141,7 +164,7 @@ export default function ProductPage() {
 
                     <div className="product-component">
                         <div className="product-container">
-                            {filteredProducts.map((product) => (
+                            {currentProducts.map((product) => (
                                 <div className="product-card" key={product._id}>
                                     <div className="product-image" onClick={() => handleProductClick(product._id)}>
                                         <img src={product.Img} alt={product.ProductName} className="prod-img" />
@@ -155,7 +178,6 @@ export default function ProductPage() {
                                                 <div className="product-name">{product.ProductName}</div>
                                                 <div className="product-price">Rs {product.Price}</div>
                                             </div>
-
                                         </div>
                                         <div className="product-buttons">
                                             <button className="add-to-cart" onClick={() => addToCart(product)}>Add to Cart</button>
@@ -166,6 +188,23 @@ export default function ProductPage() {
                             ))}
                         </div>
                     </div>
+                </div>
+                <div className="pagination">
+                    <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+                        Previous
+                    </button>
+                    {[...Array(totalPages)].map((_, index) => (
+                        <button
+                            key={index + 1}
+                            onClick={() => handlePageClick(index + 1)}
+                            className={currentPage === index + 1 ? 'active' : ''}
+                        >
+                            {index + 1}
+                        </button>
+                    ))}
+                    <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+                        Next
+                    </button>
                 </div>
             </div>
         </>

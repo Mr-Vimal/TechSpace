@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
                 updatedCart = [...prevCart, { ...product, quantity: 1, totalPrice: product.Price }];
             }
             saveCartToLocalStorage(updatedCart);
-            toast.success(`${product.ProductName} added to cart!`);
+            toast.success(`${product.ProductName} added to cart!`, {autoClose:1000});
             return updatedCart;
         });
     };
@@ -47,7 +47,7 @@ export const CartProvider = ({ children }) => {
                 updatedCart = prevCart.filter(item => item._id !== productId);
             }
             saveCartToLocalStorage(updatedCart);
-             toast.warn(`${existingProduct.productName} removed from cart!`);
+            // toast.warn(`${existingProduct.productName} removed from cart!`, { autoClose: 1000 });
             return updatedCart;
         });
     };
@@ -59,7 +59,7 @@ export const CartProvider = ({ children }) => {
     const clearCart = () => {
         setCart([]);
         localStorage.removeItem('cart');
-        toast.info(`Cart Cleared`);
+        toast.info(`Cart Cleared`,{ autoClose: 1000 });
 
     };
 

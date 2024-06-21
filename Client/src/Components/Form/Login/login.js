@@ -29,10 +29,10 @@ export default function Login() {
                 localStorage.setItem('role', role);
 
                 toast.success(`Welcome, ${name}! You have successfully logged in.`, {
-                    autoClose: 3000,
+                    autoClose: 1000,
                     onClose: () => {
                         if (role === 'admin') {
-                            navigate('/admin');
+                            navigate('/datashowing');
                         } else {
                             navigate('/');
                         }
@@ -58,9 +58,12 @@ export default function Login() {
                     <img src={Logo} alt="Logo" />
                 </div>
                 <div className="login-center">
-                    <h1>Login with TECH SPACE</h1>
+                    <div className='login-head'>
+                        <h1 className='st'>Login with </h1>
+                        <h1 className='nd'>TECH SPACE</h1>
+                    </div>
                     <form onSubmit={handleSubmit}>
-                        <div className="loginwith">
+                        {/* <div className="loginwith">
                             <div className="google__login">
                                 <LoginSocialGoogle
                                     client_id='your-google-client-id'
@@ -72,10 +75,10 @@ export default function Login() {
                                 </LoginSocialGoogle>
                                 <img src="assets/search.png" alt="google" />
                             </div>
-                        </div>
-                        <div className="divider">
+                        </div> */}
+                        {/* <div className="divider">
                             <span>or</span>
-                        </div>
+                        </div> */}
                         <div className="login-input">
                             <div className="login-txt_field">
                                 <input type="email" value={Email} onChange={handleEmail} required />
@@ -92,7 +95,7 @@ export default function Login() {
                             <button type="submit" className="login-btn-no1">Login</button>
                         </div>
                     </form>
-                    <div className="forgot">Forgot Password?</div>
+                    {/* <div className="forgot">Forgot Password?</div> */}
                     <div className="signup_link">
                         Not a Member? <a href="/signup">Create New Account</a>
                     </div>

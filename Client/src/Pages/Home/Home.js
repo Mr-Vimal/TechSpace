@@ -4,8 +4,6 @@
                 import Footer from "../../Components/Footer/Footer";
                 import logo2 from './123.avif'
                 import Navbar from "../../Components/Navbar/Navbar";
-                import ImageSlider from "../Slider/ImageSlider";
-import AdminPage from "../../Components/AddTo Cart/AdminPage";
                 export default function Home() {
 
                     return (
@@ -28,9 +26,6 @@ import AdminPage from "../../Components/AddTo Cart/AdminPage";
                                     </div>
                                 </div>
                             </div>
-                            {/* <Products /> */}
-                            <ImageSlider/>
-                            <AdminPage/>
                             <Footer />
 
                         </>

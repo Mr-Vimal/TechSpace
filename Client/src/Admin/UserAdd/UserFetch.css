@@ -8,8 +8,9 @@
 .user-table {
     width: 90%;
     margin-top: 50px;
-    background-color: hsl(180, 18%, 59%);
+    /* background-color: hsl(180, 18%, 59%); */
     margin-left: 130px;
+    font-size: 18px;
 }
 
 table {
@@ -21,7 +22,7 @@ table {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 /* tr:hover {

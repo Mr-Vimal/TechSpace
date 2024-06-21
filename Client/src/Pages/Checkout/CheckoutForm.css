@@ -58,7 +58,7 @@
   font-size: 16px;
   font-weight: 500;
   color: #fff;
-  background-color: #007bff;
+  background-color: #2691d9;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -78,16 +78,7 @@
   cursor: pointer;
 }
 .stripe-checkout-button{
-       background-color: linear-gradient(to right, #244cfd, #15e4fd);
-    background-image: linear-gradient(to right, rgb(36, 76, 253), rgb(21, 228, 253));
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
+       background-color:#2691d9;
     border: none;
     width: 100px;
     height: 30px;

@@ -47,14 +47,14 @@ export default function Contact() {
                     </div>
 
                     <div className="contact-form">
-                        <form>
+                        <form action="https://formsubmit.co/mrvimal0501@gmail.com" method="POST" >
                             <div>
-                                <input type="text" className="form-control" placeholder="First Name" />
-                                <input type="text" className="form-control" placeholder="Last Name" />
+                                <input type="text" name="firstname" className="form-control" placeholder="First Name" />
+                                <input type="text" name="lastname" className="form-control" placeholder="Last Name" />
                             </div>
                             <div>
-                                <input type="email" className="form-control" placeholder="E-mail" />
-                                <input type="text" className="form-control" placeholder="Phone" />
+                                <input type="email" name="email" className="form-control" placeholder="E-mail" />
+                                <input type="text" name="phone" className="form-control" placeholder="Phone" />
                             </div>
                             <textarea rows="5" placeholder="Message" className="form-control"></textarea>
                             <input type="submit" className="send-btn" value="send message" />
